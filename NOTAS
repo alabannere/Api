@@ -4,7 +4,18 @@ login
 API
 header Authorization: Auth: 123
 
+LOGIN
+respuesta usuario normal
 {
 "auth": true,
-"uid": "$2b$10$OEafzQjHYBmUe/NEVsDdcuBmSgalU4hKLSVZPQtB0OE.za8V8/Bx."
+"type": "user",
+"uid": "ac52bce0-7330-11eb-9ab5-9f7f5dc0df23"
+}
+
+Respuesta login administrador
+Para el backend, comprueba si el usuario es admin
+{
+"auth": true,
+"type": "admin",
+"uid": "ac52bce0-7330-11eb-9ab5-9f7f5dc0df23"
 }

@@ -6,8 +6,8 @@ module.exports = (app, authorization) => {
   /////////////////////////////////////////////////////////
   const auth = require("../controllers/auth.js");
 
-  app.post("/auth", auth.signIn);
-  app.post("/signUp", auth.signUp);
+  app.post("/auth/login", auth.signIn);
+  app.post("/auth/register", auth.signUp);
 
   /////////////////////////////////////////////////////////
   //PROTEGIDO
@@ -27,16 +27,18 @@ module.exports = (app, authorization) => {
 
   if (ifAuth) {
     // Posts
-    app.post("/posts", posts.create);
-    app.get("/posts", posts.findAll);
-    app.get("/posts/:id", posts.findOne);
-    app.put("/posts/:id", posts.update);
-    app.delete("/post/:id", posts.delete);
-    app.delete("/posts", posts.deleteAll);
+    app.get("/posts", posts.GETALL);
+    app.get("/post/:id", posts.GETBYID);
+    app.post("/post/create", posts.CREATE);
+    app.put("/post/update/:id", posts.UPDATE);
+    app.delete("/post/delete/:id", posts.DELETE);
+    //app.delete("/posts/deleteall", posts.deleteAll);
 
     // Categorias
-    app.get("/categories", categories.findAll);
-    app.get("/category/:id", categories.findOne);
+    app.get("/categories", categories.GETALL);
+    app.get("/category/:id", categories.GETBYID);
+    app.delete("/category/delete/:id", categories.DELETE);
+
   } else {
     app.get("*", errorApiKey);
     app.post("*", errorApiKey);

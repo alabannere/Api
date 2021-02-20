@@ -8,7 +8,6 @@ module.exports = {
         const hash = await bcrypt.hash(password, salt);
         const valid = await bcrypt.compare(password2, hash);
         return valid;
-
     },
 
 
@@ -31,7 +30,6 @@ module.exports = {
 
     UID() {
         return uuid.v1();
-
     }
 
 };

@@ -1,6 +1,5 @@
 const mysql = require("mysql");
 
-
 const DB = {
   HOST: "localhost",
   USER: "root",
