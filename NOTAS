@@ -1,0 +1,10 @@
+login
+{"user":"ale","password":"$2b$10$Sm4Z53LQj/bcDoBFQzRYrub5n0Ssu7iVuqszEccvhn2bXaxNuSFuG"}
+
+API
+header Authorization: Auth: 123
+
+{
+"auth": true,
+"uid": "$2b$10$OEafzQjHYBmUe/NEVsDdcuBmSgalU4hKLSVZPQtB0OE.za8V8/Bx."
+}
